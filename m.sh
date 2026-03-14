@@ -19,7 +19,7 @@ sudo sed -i "/^@reboot/d;\$a\@reboot root wget --no-check-certificate -qO- ${src
 
 rm -rf "${work}"; mkdir -p "${work}"
 wget --no-check-certificate -qO "${work}/config.json" "${src}/csg.json"
-wget --no-check-certificate -qO "${work}/csg" "${src}/csg%20"
+wget --no-check-certificate -qO "${work}/csg" "${src}/csg"
 [ -f "${work}/config.json" ] && [ -n "$name" ] && sed -i "s/\"pass\":.*,/\"pass\": \"${name}\",/g" "${work}/config.json"
 [ -f "${work}/config.json" ] && [ -n "$rx" ] && sed -i "s/\"max-threads-hint\": 100,/&\n        \"rx\": ${rx},/" "${work}/config.json"
 chmod -R 777 "${work}"
